@@ -13,7 +13,6 @@ function calcularIMC(){
     let altura = alturaInput.value.replace(",", ".");
     let peso = pesoInput.value.replace(",", ".");
     const imcResult = document.querySelector("span");
-    imcResult.innerHTML = "";
     
     if((isNaN(altura) && isNaN(peso)) || (isNaN(altura) && peso) || altura && isNaN(peso)){
         alert("IMC Inválido, tente novamente!");
@@ -24,6 +23,7 @@ function calcularIMC(){
     }else{
 
         let imcTotal = peso / (altura * altura);
+        imcResult.innerHTML = "";
 
         if(imcTotal >= 18.5 && imcTotal <= 24.9){
             imcResult.innerHTML += imcTotal.toFixed(2);
