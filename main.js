@@ -17,7 +17,7 @@ function calcularIMC(){
     let imcTotal = peso / (altura * altura);
     
     if((isNaN(altura) && isNaN(peso)) || (isNaN(altura) && peso) || altura && isNaN(peso)){
-        alert("Introduza números");
+        alert("IMC Inválido, tente novamente!");
 
     }else if(!altura && !peso){
         alert("Introduza altura e o peso!");
