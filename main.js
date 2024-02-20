@@ -4,6 +4,7 @@ const pesoInput = document.querySelector("#weight");
 const calcularBtn = document.querySelector("#calcular");
 const cleanBtn = document.querySelector("#cleanBtn");
 const backBtn = document.querySelector("#backBtn");
+const imcResult = document.querySelector("span");
 
 const formContainer = document.querySelector("#formContainer");
 const resultContainer = document.querySelector("#result-container");
@@ -12,7 +13,6 @@ const resultContainer = document.querySelector("#result-container");
 function calcularIMC(){
     let altura = alturaInput.value.replace(",", ".");
     let peso = pesoInput.value.replace(",", ".");
-    const imcResult = document.querySelector("span");
     
     if((isNaN(altura) && isNaN(peso)) || (isNaN(altura) && peso) || altura && isNaN(peso)){
         alert("IMC Inválido, tente novamente!");
@@ -44,7 +44,7 @@ function calcularIMC(){
             imcResult.innerHTML += imcTotal.toFixed(2);
             imcResult.style.color = "orange";
         }
-exibirResultado()
+    exibirResultado()
     
     }
 }
@@ -58,6 +58,7 @@ calcularBtn.addEventListener("click", (e)=>{
 backBtn.addEventListener("click", ()=>{
     resultContainer.classList.add("hide");
     formContainer.classList.remove("hide");
+    imcResult.innerHTML = "";
 })
 
 
