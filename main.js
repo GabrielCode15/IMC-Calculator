@@ -20,6 +20,8 @@ function calcularIMC(){
     }else if(!altura && !peso){
         alert("Introduza altura e o peso!");
 
+    }else if((!altura && peso) || (altura && !peso)){
+        alert("IMC inválido");
     }else{
 
         const imcTotal = peso / (altura * altura);
